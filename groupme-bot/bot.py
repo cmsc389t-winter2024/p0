@@ -10,7 +10,7 @@ BOT_ID = os.getenv("BOT_ID")
 GROUP_ID = os.getenv("GROUP_ID")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 LAST_MESSAGE_ID = None
-MY_SENDER_ID = "94000657"
+MY_USER_ID = "94000657"
 
 
 def send_message(text, attachments=None):
@@ -40,7 +40,7 @@ def process_message(message):
     global LAST_MESSAGE_ID
     
     # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
-    if message.get("sender_id") == MY_SENDER_ID:
+    if message.get("user_id") == MY_USER_ID:
         text = message["text"].lower()
         if "hello bot" in text:
             send_message("sup")
