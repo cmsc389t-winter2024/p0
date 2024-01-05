@@ -41,9 +41,12 @@ def process_message(message):
     
     # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
     if message.get("user_id") == MY_USER_ID:
+        sender_name = message["name"]
         text = message["text"].lower()
-        if "hello bot" in text:
-            send_message("sup")
+        if "good morning" in text:
+            send_message(f"Good morning, {sender_name}!")
+        elif "good night" in text:
+            send_message(f"Good night, {sender_name}!")
 
     LAST_MESSAGE_ID = message["id"]
 
