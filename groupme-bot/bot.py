@@ -43,6 +43,8 @@ def process_message(message):
     if message.get("user_id") == MY_USER_ID:
         sender_name = message["name"]
         text = message["text"].lower()
+        if "hey bot" in text:
+            send_message(f"Hey, {sender_name}!")
         if "good morning" in text:
             send_message(f"Good morning, {sender_name}!")
         elif "good night" in text:
