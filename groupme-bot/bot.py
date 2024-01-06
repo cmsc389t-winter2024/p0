@@ -45,7 +45,7 @@ def process_message(message):
         text = message["text"].lower()
         if "hey bot" in text:
             send_message(f"Hey, {sender_name}!")
-        if "good morning" in text:
+        elif "good morning" in text:
             send_message(f"Good morning, {sender_name}!")
         elif "good night" in text:
             send_message(f"Good night, {sender_name}!")
