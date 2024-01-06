@@ -38,9 +38,9 @@ def get_group_messages(since_id=None):
 def process_message(message):
     """Process and respond to a message."""
     global LAST_MESSAGE_ID
+    sender_id = message["sender_id"]
     
-    # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
-    if message.get("sender_id") == MY_USER_ID:
+    if sender_id == MY_USER_ID:
         sender_name = message["name"]
         text = message["text"].lower()
         if "hey bot" in text:
