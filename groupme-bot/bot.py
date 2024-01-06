@@ -10,6 +10,7 @@ BOT_ID = os.getenv("BOT_ID")
 GROUP_ID = os.getenv("GROUP_ID")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 LAST_MESSAGE_ID = None
+MY_USER_ID = "94000657"
 
 
 def send_message(text, attachments=None):
@@ -37,11 +38,17 @@ def get_group_messages(since_id=None):
 def process_message(message):
     """Process and respond to a message."""
     global LAST_MESSAGE_ID
-    text = message["text"].lower()
-
-    # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
-    if "hello bot" in text:
-        send_message("sup")
+    sender_id = message["sender_id"]
+    
+    if sender_id == MY_USER_ID:
+        sender_name = message["name"]
+        text = message["text"].lower()
+        if "hey bot" in text:
+            send_message(f"Hey, {sender_name}!")
+        elif "good morning" in text:
+            send_message(f"Good morning, {sender_name}!")
+        elif "good night" in text:
+            send_message(f"Good night, {sender_name}!")
 
     LAST_MESSAGE_ID = message["id"]
 
