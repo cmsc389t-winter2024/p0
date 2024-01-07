@@ -46,7 +46,6 @@ def process_message(message):
     # TASK 1: respond to you
     if sender_id == MY_USER_ID:
         send_message(f"Hi, {sender_name}!")
-
     
     if sender_id != "system":
         text = message["text"].lower()
