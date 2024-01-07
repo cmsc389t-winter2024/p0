@@ -2,7 +2,7 @@
 
 ## How to Run:
 Step1: Type "python3 bot.py" in the terminal while inside the project directory \
-Step2: Write your message in GroupMe
+Step2: Write your message in GroupMe with designated prompt
 
 ## Different Prompts:
 Prompt 1: "Good Morning" -----> "good morning {NAME}" \
