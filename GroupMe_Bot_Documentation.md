@@ -2,7 +2,7 @@
 
 ## Features
 
-### 1. Greeting
+### 1. Greeting Testing GitHub
 - Responds to "hello bot" with the word "sup." The bot only responds to Luke Stenger saying hello.
 
 ### 2. Waking Up and Dozing Off
